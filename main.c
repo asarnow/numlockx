@@ -51,13 +51,14 @@ DEALINGS IN THE SOFTWARE.
 
 void usage( const char* argv0 )
     {
-    printf( "NumLockX " VERSION "\n"
+    printf( "ScrollLockX " VERSION "\n"
         "(C) 2000-2001 Lubos Lunak <l.lunak@kde.org>\n"
         "(C) 2001      Oswald Buddenhagen <ossi@kde.org>\n\n"
+        "(C) 2015      Daniel Asarnow <dasarnow@gmail.com>\n\n"
         "Usage : %s [on|off]\n"
-        "on     - turns NumLock on in X ( default )\n"
-        "off    - turns NumLock off in X\n"
-        "toggle - toggles the NumLock on and off in X\n"
+        "on     - turns ScrollLock on in X ( default )\n"
+        "off    - turns ScrollLock off in X\n"
+        "toggle - toggles the ScrollLock on and off in X\n"
         "\n"
         , argv0 );
     }
