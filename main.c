@@ -101,7 +101,7 @@ unsigned int xkb_numlock_mask()
     XkbDescPtr xkb;
     if(( xkb = XkbGetKeyboard( dpy, XkbAllComponentsMask, XkbUseCoreKbd )) != NULL )
 	{
-        unsigned int mask = xkb_mask_modifier( xkb, "NumLock" );
+        unsigned int mask = xkb_mask_modifier( xkb, "ScrollLock" );
         XkbFreeKeyboard( xkb, 0, True );
         return mask;
         }
@@ -162,7 +162,7 @@ int xtest_get_numlock_state()
     int dummy3, dummy4, dummy5, dummy6;
     unsigned int mask;
     XModifierKeymap* map = XGetModifierMapping( dpy );
-    KeyCode numlock_keycode = XKeysymToKeycode( dpy, XK_Num_Lock );
+    KeyCode numlock_keycode = XKeysymToKeycode( dpy, XK_Scroll_Lock );
     if( numlock_keycode == NoSymbol )
         return 0;
     for( i = 0;
@@ -180,8 +180,8 @@ int xtest_get_numlock_state()
 
 void xtest_change_numlock()
     {
-    XTestFakeKeyEvent( dpy, XKeysymToKeycode( dpy, XK_Num_Lock ), True, CurrentTime );
-    XTestFakeKeyEvent( dpy, XKeysymToKeycode( dpy, XK_Num_Lock ), False, CurrentTime );
+    XTestFakeKeyEvent( dpy, XKeysymToKeycode( dpy, XK_Scroll_Lock ), True, CurrentTime );
+    XTestFakeKeyEvent( dpy, XKeysymToKeycode( dpy, XK_Scroll_Lock ), False, CurrentTime );
     }
 
 void xtest_set_on()
